@@ -1,0 +1,13 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #6495ed;
+}
+
+.cards>div {
+    margin: 10px;
+}

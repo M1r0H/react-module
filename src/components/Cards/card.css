@@ -1,0 +1,4 @@
+.cards>div>button>div{
+    background-size: contain;
+    background-position-y: 5px;
+}
