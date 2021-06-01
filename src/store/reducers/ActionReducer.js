@@ -11,7 +11,7 @@ export default function ActionReducer(state = initialState, action) {
         case 'DELETE':
             return {
                 ...state,
-                data: state.data.filter(data => data.goods._id !== action.payload)
+                data: state.data.filter(data => data.goods.id !== action.payload)
             };
         default:
             return state;

@@ -8,8 +8,8 @@ import '../form.css'
 export const SignUpModule = ({ history }) => {
     const [SignUp] = useMutation(SIGN_UP_MUTATION);
 
-    const onSignUp = async ({ login, nick, pass }) => {
-        await SignUp({ variables: { login: login, nick: nick, password: pass } });
+    const onSignUp = async ({ login, nick, password }) => {
+        await SignUp({ variables: { login: login, nick: nick, password: password } });
         history.push('/')
     }
     const validation = (values) => {

@@ -15,20 +15,20 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
-      <ApolloProvider>
-        <Provider store={store}>
-          <Route component={ButtonAppBar} />
-          <Switch>
-            <Route exact path="/" component={SignInModule} />
-            <Route path="/signup" component={SignUpModule} />
-            <PrivateRoute exact path="/main" component={MainPage} />
-            <PrivateRoute exact path="/main/category/:id" component={Categories} />
-            <PrivateRoute path="/main/busket" component={Busket} />
-          </Switch>
-        </Provider>
-      </ApolloProvider>
-    </BrowserRouter>
+      <BrowserRouter>
+        <ApolloProvider>
+          <Provider store={store}>
+            <Route component={ButtonAppBar} />
+            <Switch>
+              <Route exact path="/" component={SignInModule} />
+              <Route path="/signup" component={SignUpModule} />
+              <PrivateRoute exact path="/main" component={MainPage} />
+              <PrivateRoute exact path="/main/category/:id" component={Categories} />
+              <PrivateRoute path="/main/busket" component={Busket} />
+            </Switch>
+          </Provider>
+        </ApolloProvider>
+      </BrowserRouter>
   );
 }
 

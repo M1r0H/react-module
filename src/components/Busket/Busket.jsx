@@ -6,28 +6,35 @@ import '../Cards/card.css'
 
 
 export const Busket = ({ location: { pathname } }) => {
-    const { BuyData } = useSelector(({ BuyData }) => ({ BuyData }));
+    const { BuyData: { data } } = useSelector(({ BuyData }) => ({ BuyData }));
 
     const spawnCard = () => {
-        const { data } = BuyData
         if (data.length !== 0) {
-            return data.map(({ goods: { _id, name, description, images, price } }) => {
+            return data.map(({ goods: { id, name, description, images, price } }) => {
                 return (
-                    <GoodsCard
-                        pathname={pathname}
-                        key={_id}
-                        _id={_id}
-                        name={name}
-                        description={description}
-                        images={images}
-                        price={price}
-                    />
+                    <React.Fragment key={id}>
+                        <GoodsCard
+                            pathname={pathname}
+                            id={id}
+                            name={name}
+                            description={description}
+                            images={images}
+                            price={price}
+                        />
+                    </React.Fragment>
                 )
             })
         }
     }
 
     return (
-        <div className="cards">{spawnCard()}</div>
+        <div className="cards">
+            {data.length === 0
+                ?
+                <h1 className="busket-empty">Busket is emty</h1>
+                :
+                spawnCard()
+            }
+        </div>
     )
 }

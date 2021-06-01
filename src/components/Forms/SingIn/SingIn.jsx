@@ -47,6 +47,7 @@ export const SignInModule = ({ history }) => {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                                 value={values.name}
+                                data-testid="input" 
                             />
                             {touched.login && errors.login && <p className="errors">{errors.login}</p>}
                         </div>
@@ -57,7 +58,7 @@ export const SignInModule = ({ history }) => {
                                 name="password"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.name}
+                                value={values.name} 
                             />
                             {touched.password && errors.password && <p className="errors">{errors.password}</p>}
                         </div>
@@ -67,6 +68,7 @@ export const SignInModule = ({ history }) => {
                             onClick={handleSubmit}
                             disabled={!isValid && !dirty}
                             type="submit"
+                            data-testid="button-sign-in" 
                         >
                             SignIn
                         </button>

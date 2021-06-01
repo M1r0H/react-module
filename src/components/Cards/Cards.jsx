@@ -18,15 +18,16 @@ export default function MediaCard({ location: { pathname, state: { id } } }) {
             const { CategoryFindOne: { goods } } = categoryData
             return goods.map(({ _id, name, description, images, price }) => {
                 return (
-                    <GoodsCard
-                        pathname={pathname}
-                        key={_id}
-                        _id={_id}
-                        name={name}
-                        description={description}
-                        images={images}
-                        price={price}
-                    />
+                    <React.Fragment key={_id}>
+                        <GoodsCard
+                            pathname={pathname}
+                            id={_id}
+                            name={name}
+                            description={description}
+                            images={images}
+                            price={price}
+                        />
+                    </React.Fragment>
                 )
             })
         }
